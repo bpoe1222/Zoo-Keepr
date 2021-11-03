@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const { animals } = require('./data/animals');
+
 const PORT = process.env.PORT || 3001;
+const app = express();
 
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
@@ -50,8 +51,8 @@ app.get('/api/animals/:id', (req, res) => {
     } else {
         res.send(404);
     }
-})
+});
 
 app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}!`);
-})
+    console.log(`API server now on port ${PORT}!`);
+});
